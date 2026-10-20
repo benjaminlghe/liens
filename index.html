@@ -33,8 +33,12 @@ a.c:active{transform:scale(.98)}
 .play::before{content:"";margin-left:5px;border-left:18px solid var(--petrole);border-top:12px solid transparent;border-bottom:12px solid transparent}
 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 .row .tx{padding:12px 14px 14px}.row .t{font-size:18px}
-.sl{position:absolute;inset:0}.sl img{position:absolute;inset:0;opacity:0;animation:fade 15s infinite}.sl img:nth-child(1){animation-delay:0s}.sl img:nth-child(2){animation-delay:3s}.sl img:nth-child(3){animation-delay:6s}.sl img:nth-child(4){animation-delay:9s}.sl img:nth-child(5){animation-delay:12s}
-@keyframes fade{0%{opacity:0;transform:scale(1.06)}4%{opacity:1}20%{opacity:1}26%{opacity:0;transform:scale(1)}100%{opacity:0}}
+.sl{position:absolute;inset:0}.sl img{position:absolute;inset:0;opacity:0;animation:fade var(--d) infinite}
+.sl img:nth-child(1){animation-delay:calc(var(--d)*0/var(--n))}.sl img:nth-child(2){animation-delay:calc(var(--d)*1/var(--n))}.sl img:nth-child(3){animation-delay:calc(var(--d)*2/var(--n))}.sl img:nth-child(4){animation-delay:calc(var(--d)*3/var(--n))}.sl img:nth-child(5){animation-delay:calc(var(--d)*4/var(--n))}.sl img:nth-child(6){animation-delay:calc(var(--d)*5/var(--n))}
+.sl{--n:5;--d:10s}.row a:first-child .sl{--n:6;--d:12s;--k:16.6%}
+@keyframes fade{0%{opacity:0;transform:scale(1.06)}4%{opacity:1}18%{opacity:1}22%{opacity:0;transform:scale(1)}100%{opacity:0}}
+@keyframes fade6{0%{opacity:0;transform:scale(1.06)}4%{opacity:1}15%{opacity:1}19%{opacity:0;transform:scale(1)}100%{opacity:0}}
+.row a:first-child .sl img{animation-name:fade6}
 footer{margin-top:34px;text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
 footer a{color:var(--petrole);opacity:.7}
 </style></head><body><main>
@@ -50,7 +54,7 @@ footer a{color:var(--petrole);opacity:.7}
 <a class="c p" href="https://lagouche-editions.com/fr"><div class="im"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_32YFWFqIGACu5s50CGxQ2WH38e7/10485311-f437-42e9-8f13-f03b012185af.jpg" alt=""></div>
 <div class="tx"><span class="k">Tirages</span><div class="t">Lagouche Editions</div><div class="d">the car you'll never drive</div></div></a>
 <div class="row">
-<a class="c" href="https://www.instagram.com/benjaminlagouche/"><div class="im"><img src="seoul.jpg" alt=""></div>
+<a class="c" href="https://www.instagram.com/benjaminlagouche/"><div class="im"><div class="sl"><img src="ig0.jpg" alt=""><img src="ig1.jpg" alt=""><img src="ig2.jpg" alt=""><img src="ig3.jpg" alt=""><img src="ig4.jpg" alt=""><img src="ig5.jpg" alt=""></div></div>
 <div class="tx"><span class="k">Instagram</span><div class="t">la vie à Séoul</div><div class="d">photo, vlog, quotidien</div></div></a>
 <a class="c" href="https://benjaminlagouche.fr"><div class="im"><div class="sl"><img src="pf0.jpg" alt=""><img src="pf1.jpg" alt=""><img src="pf2.jpg" alt=""><img src="pf3.jpg" alt=""><img src="pf4.jpg" alt=""></div></div>
 <div class="tx"><span class="k">Portfolio</span><div class="t">mon travail de DA</div><div class="d">YSL, Renault, Dacia</div></div></a>
